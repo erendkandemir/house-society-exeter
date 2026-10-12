@@ -1,412 +1,365 @@
-const nav = [
-  ["Manifesto", "#manifesto"],
-  ["Programme", "#programme"],
-  ["Membership", "#membership"],
-  ["Residents", "#residents"],
-  ["Committee", "#committee"],
-  ["Contact", "#contact"],
+const navigation = [
+
+  { label: "The idea", href: "#about" },
+
+  { label: "The sound", href: "#sound" },
+
+  { label: "What's coming", href: "#programme" },
+
+  { label: "Get in touch", href: "#contact" },
+
 ];
 
-const manifestoLines = [
-  "HOUSE HOUSE HOUSE",
-  "HOUSE HOUSE HOUSE",
-  "HOUSE HOUSE HOUSE",
-  "LOVE HOUSE???",
+
+
+const formats = [
+
+  {
+
+    number: "01",
+
+    category: "THE MAIN EVENT",
+
+    name: "BOILER ROOMS",
+
+    description:
+
+      "Full rooms. Heavy selections. No filler. The kind of night you talk about the next day.",
+
+    keywords: "HAUS HAUS HAUS",
+
+    theme: "red",
+
+  },
+
+  {
+
+    number: "02",
+
+    category: "DAY OUT (FREE)",
+
+    name: "BEACH POP UPS",
+
+    description:
+
+      "More laid back, chilled vibes and selectors who know exactly what they're doing.",
+
+    keywords: "HOUSE HOUSE HOUSE",
+
+    theme: "dark",
+
+  },
+
+  {
+
+    number: "03",
+
+    category: "PARTIES (FREE)",
+
+    name: "AND SOME FAT HOUSE PARTIES",
+
+    description:
+
+      "Bring you're mates, bring some booze, we'll bring the music... Just try not to trash the gaff.",
+
+    keywords: "HAUS HAUS HAUS",
+
+    theme: "light",
+
+  },
+
 ];
 
-const programme = [
-  {
-    code: "HS001",
-    type: "FLAGSHIP",
-    title: "OPENING NIGHT",
-    meta: "HOUSE / DISCO / UK HOUSE",
-    note: "THE FIRST ONE.",
-    tone: "red",
-  },
-  {
-    code: "HS.SSN",
-    type: "SESSION",
-    title: "HOUSE SOCIETY SESSIONS",
-    meta: "SMALL ROOMS / GUEST SELECTORS / LIMITED CAPACITY",
-    note: "NO BIG ANNOUNCEMENT. JUST TURN UP.",
-    tone: "black",
-  },
-  {
-    code: "HS.DAY",
-    type: "SOCIAL",
-    title: "BEACH / TERRACE / DAY",
-    meta: "MEMBERS / MUSIC / SUN / WHATEVER WORKS",
-    note: "THE CLUB ISN'T THE WHOLE POINT.",
-    tone: "cream",
-  },
-];
 
-const benefits = [
-  "EARLY ACCESS",
-  "MEMBERS RELEASES",
-  "PRIVATE POP-UPS",
-  "SOCIALS",
-  "GUESTLIST DROPS",
-  "MEMBER-ONLY EVENTS",
+
+// Each word translates to “house” — one sound, many languages.
+const houseLanguages = [
+  { word: "HOUSE", language: "ENGLISH", code: "EN" },
+  { word: "MAISON", language: "FRENCH", code: "FR" },
+  { word: "HAUS", language: "GERMAN", code: "DE" },
+  { word: "CASA", language: "SPANISH / ITALIAN", code: "ES / IT" },
+  { word: "HUIS", language: "DUTCH", code: "NL" },
+  { word: "EV", language: "TURKISH", code: "TR" },
+  { word: "DOM", language: "POLISH", code: "PL" },
 ];
 
 export default function Home() {
+
   return (
-    <main className="site-shell">
-      <div className="site-noise" />
 
-      <header className="rogue-nav">
-        <a className="rogue-brand" href="#top" aria-label="House Society home">
-          <img src="/house-society-globe.png" alt="House Society globe mark" />
-          <span>
-            HOUSE
-            <br />
-            SOCIETY
-          </span>
+    <main className="hs-site" id="top">
+
+      <div className="hs-grain" aria-hidden="true" />
+
+
+
+      <header className="hs-header">
+
+        <a className="hs-brand" href="#top" aria-label="House Society, back to top">
+
+          <img src="/house-society-globe.png" alt="" />
+
+          <span>HOUSE<br />SOCIETY<span className="hs-brand-dot">®</span></span>
+
         </a>
 
-        <div className="nav-middle">
-          {nav.map(([label, href]) => (
-            <a key={href} href={href}>
-              {label}
-            </a>
+        <nav className="hs-nav" aria-label="Main navigation">
+
+          {navigation.map((item) => (
+
+            <a key={item.href} href={item.href}>{item.label}</a>
+
           ))}
-        </div>
 
-        <a className="join-chip" href="#membership">
-          £1 MEMBER
-        </a>
+        </nav>
+
+        <a className="hs-nav-cta" href="#launch">SEP 2027 <span aria-hidden="true">↗</span></a>
+
       </header>
 
-      <section className="rogue-hero" id="top">
-        <div className="hero-background-word">HOUSE</div>
 
-        <div className="hero-topline">
-          <span>EXETER</span>
-          <span>2026/27 →</span>
-          <span>HOUSE</span>
+
+      <section className="hs-hero" aria-labelledby="hero-title">
+
+        <div className="hs-hero-ghost" aria-hidden="true">HOUSE</div>
+
+        <div className="hs-hero-top hs-mono">
+
+          <span>INDEPENDENT CULTURE / EXETER</span>
+
+          <span>EST. IN THE UNDERGROUND</span>
+
+          <span>001—027</span>
+
         </div>
 
-        <div className="hero-left">
-          <p className="micro-copy">
-            STUDENT-LED
-            <br />
-            HOUSE MUSIC
-            <br />
-            EVENTS / SOCIALS / POP-UPS
-          </p>
+        <div className="hs-hero-content">
 
-          <h1>
-            HOUSE
-            <span>SOCIETY</span>
-          </h1>
+          <div className="hs-hero-lead hs-mono"><span className="hs-live-dot" /> A NEW FREQUENCY IS COMING</div>
 
-          <p className="hero-statement">
-            IT'S BEEN A LONG TIME COMING HASN'T IT EXETER...
-          </p>
+          <h1 id="hero-title">HOUSE<span>SOCIETY<span className="hs-asterisk">*</span></span></h1>
+
+          <div className="hs-hero-bottom-line">
+
+            <p>OHHH EXETER.<br /><em>IT'S BEEN A LONG TIME COMING.</em></p>
+
+            <div className="hs-hero-stamp" aria-label="Launching September 2027"><span>EXETER</span><strong>09 / 27</strong><span>THE BEGINNING</span></div>
+
+          </div>
+
         </div>
 
-        <div className="hero-right">
-          <img
-            className="hero-globe"
-            src="/house-society-globe.png"
-            alt="House Society globe"
-          />
+        <img className="hs-hero-globe" src="/house-society-globe.png" alt="House Society globe emblem" />
 
-          <p className="hero-sidecopy">
-            MEMBERS.
-            <br />
-            RESIDENTS.
-            <br />
-            COMMITTEE.
-            <br />
-            LATE NIGHTS.
-          </p>
-        </div>
+        <div className="hs-hero-footer hs-mono"><span>HOUSE MUSIC / PEOPLE / AFTER HOURS</span><a href="#about">SCROLL TO ENTER ↓</a></div>
 
-        <div className="hero-bottom">
-          <span>SCROLL ↓</span>
-          <span>HS / EXE / 001</span>
-        </div>
       </section>
 
-      <section className="anti-section" id="manifesto">
-        <div className="section-marker">01 / MANIFESTO</div>
 
-        <div className="manifesto-wall">
-          {manifestoLines.map((line, index) => (
-            <div
-              key={line}
-              className={`manifesto-line manifesto-line-${index + 1}`}
-            >
-              {line}
+
+      <div className="hs-marquee" aria-label="NAHHHH GUYS... YOU DON'T WANT TO MISS THIS">
+
+        <div className="hs-marquee-track" aria-hidden="true">
+
+          {Array.from({ length: 4 }, (_, i) => (
+
+            <span key={i}>BEST TUNES IN EXETER... <b>✳</b> PROPER DJ'S... <b>✳</b> </span>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+
+      <section className="hs-about hs-section" id="about">
+
+        <div className="hs-section-label hs-mono">[ 01 / THE IDEA ]</div>
+
+        <div className="hs-about-main">
+
+          <p className="hs-eyebrow hs-mono">THIS IS HOUSE SOCIETY.</p>
+
+          <h2>GOOD MUSIC.<br />BAD <span>HABITS.</span><br />GREAT NIGHTS.</h2>
+
+          <div className="hs-about-copy">
+
+            <p>House Society is an independent events project born in Exeter. A home for proper dance music, curious crowds and nights with their own identity.</p>
+
+            <p>We're here for the music that moves you, the rooms that feel different, and the people who make it all worth staying out for.</p>
+
+            <strong>NO FORMULA. NO DRESS CODE FOR TASTE. JUST THE RIGHT ENERGY.</strong>
+
+          </div>
+
+        </div>
+
+        <div className="hs-about-footer hs-mono"><span>INDEPENDENT BY DESIGN</span><span>EXETER, UK ↗</span></div>
+
+      </section>
+
+
+
+      <section className="hs-sound hs-section" id="sound" aria-labelledby="sound-title">
+        <div className="hs-sound-topline">
+          <div className="hs-section-label hs-mono">[ 02 / THE SOUND ]</div>
+          <span className="hs-mono">ONE WORD. EVERY LANGUAGE.</span>
+        </div>
+
+        <div className="hs-sound-intro">
+          <p className="hs-mono">A UNIVERSAL LANGUAGE / EXETER ↔ EVERYWHERE</p>
+          <h2 id="sound-title">SAY IT <em>HOWEVER</em> YOU LIKE.</h2>
+        </div>
+
+        <div className="hs-language-wall" aria-label="The word house translated into different languages">
+          {houseLanguages.map((item, index) => (
+            <div className={`hs-language-row hs-language-row-${index + 1}`} key={item.language}>
+              <div className="hs-language-label hs-mono">
+                <span>{String(index + 1).padStart(2, "0")} / {item.code}</span>
+                <span>{item.language}</span>
+              </div>
+              <div className="hs-language-viewport">
+                <div className="hs-language-track" aria-hidden="true">
+                  {Array.from({ length: 6 }, (_, repeat) => (
+                    <span className="hs-language-word" key={repeat}>
+                      {item.word}<i aria-hidden="true">✳</i>
+                    </span>
+                  ))}
+                </div>
+                <span className="hs-language-accessible">{item.word}</span>
+              </div>
             </div>
           ))}
+          <div className="hs-sound-core" aria-hidden="true">
+            <span className="hs-mono">WHATEVER YOU CALL IT</span>
+            <strong>IT'S<br /><i>HOUSE.</i></strong>
+            <span className="hs-mono">ONE SOUND / NO BORDERS</span>
+          </div>
         </div>
 
-        <div className="manifesto-small">
-          <p>
-            House Society borrows the best part of a university society:
-            identity, membership, committee, community, recurring socials and
-            people who actually care about turning up.
-          </p>
-
-          <p>
-            But with no restrictions...
-          </p>
-        </div>
-
-        <div className="margin-note">
-          NO GUILD.
-          <br />
-          NO COMMITTEE ROOM ENERGY.
-          <br />
-          NO GENERIC CLUB FLYERS.
+        <div className="hs-sound-bottom hs-mono">
+          <span>SEVEN LANGUAGES / ONE DANCEFLOOR</span>
+          <span>TRANSLATION COMPLETE ↗</span>
         </div>
       </section>
 
-      <section className="programme-section" id="programme">
-        <div className="programme-heading">
-          <div className="section-marker">02 / PROGRAMME</div>
-          <h2>
-            OHHH BOY...
-            <br />
-            IM GONNA CREAM
-          </h2>
+      <section className="hs-programme hs-section" id="programme">
+
+        <div className="hs-section-label hs-mono">[ 03 / WHAT'S COMING ]</div>
+
+        <div className="hs-programme-intro">
+
+          <h2>PROPPA<br /><span>SOCIALS.</span><br />EVERY WEEK.</h2>
+
+          <div><p>We're building more than one kind of night.</p><span className="hs-mono">THE CONCEPTS / FULL DETAILS TO FOLLOW</span></div>
+
         </div>
 
-        <div className="programme-list">
-          {programme.map((event) => (
-            <article
-              key={event.code}
-              className={`programme-row ${event.tone}`}
-            >
-              <div className="programme-code">{event.code}</div>
+        <div className="hs-format-grid">
 
-              <div className="programme-main">
-                <span className="programme-type">{event.type}</span>
-                <h3>{event.title}</h3>
-                <p>{event.meta}</p>
-              </div>
+          {formats.map((format) => (
 
-              <div className="programme-note">{event.note}</div>
+            <article className={`hs-format hs-format-${format.theme}`} key={format.number}>
 
-              <div className="programme-arrow">↗</div>
+              <div className="hs-format-top hs-mono"><span>HS / {format.number}</span><span>CONCEPT IN DEVELOPMENT</span></div>
+
+              <div className="hs-format-center"><span className="hs-mono">{format.category}</span><h3>{format.name}</h3></div>
+
+              <div className="hs-format-bottom"><p>{format.description}</p><span className="hs-mono">{format.keywords}</span></div>
+
             </article>
+
           ))}
+
         </div>
+
+        <p className="hs-programme-note hs-mono">* FORMATS ARE A PREVIEW OF OUR DIRECTION, NOT CONFIRMED EVENT ANNOUNCEMENTS.</p>
+
       </section>
 
-      <section className="statement-break">
-        <div className="statement-track">
-          <span>MUSIC</span>
-          <span>PEOPLE</span>
-          <span>EXETER</span>
-          <span>LATE NIGHTS</span>
-          <span>MUSIC</span>
-          <span>PEOPLE</span>
-        </div>
+
+
+      <section className="hs-interlude" aria-label="House Society ethos">
+
+        <div className="hs-interlude-number hs-mono">HS—001 / INCOMING</div>
+
+        <p>OHH BOY<br />I'M <span>GONNA CREAM</span></p>
+
+        <div className="hs-interlude-bottom hs-mono"><span>LESS SCROLLING.</span><span>MORE DANCING.</span></div>
+
       </section>
 
-      <section className="membership-rogue" id="membership">
-        <div className="membership-left">
-          <div className="section-marker">03 / MEMBERSHIP</div>
 
-          <h2>
-            JOIN
-            <br />
-            FOR
-          </h2>
 
-          <div className="big-pound">£1</div>
-        </div>
+      <section className="hs-launch hs-section" id="launch">
 
-        <div className="membership-right">
-          <p className="membership-lead">
-            Membership is not the product.
-            <br />
-            Membership is the signal.
-          </p>
+        <div className="hs-section-label hs-mono">[ 04 / THE COUNT-IN ]</div>
 
-          <p>
-            You join because you want to be part of it. The pound simply makes
-            it official.
-          </p>
+        <div className="hs-launch-layout">
 
-          <div className="benefit-cloud">
-            {benefits.map((benefit, index) => (
-              <span key={benefit} className={`benefit benefit-${index + 1}`}>
-                {benefit}
-              </span>
-            ))}
+          <div className="hs-launch-left">
+
+            <p className="hs-mono hs-launch-kicker"><span className="hs-live-dot" /> TRANSMISSION PENDING</p>
+
+            <h2>SEPT.<br /><span>2027.</span></h2>
+
+            <p className="hs-launch-headline">EXETER, WE'RE JUST GETTING STARTED.</p>
+
           </div>
 
-          <a className="membership-button" href="#contact">
-            JOINING SOON ↗
-          </a>
-        </div>
+          <div className="hs-launch-right">
 
-        <div className="membership-footnote">
-          VALID FOR THE ACADEMIC YEAR / EXETER / MEMBERS FIRST
-        </div>
-      </section>
+            <div className="hs-launch-disc"><img src="/house-society-globe.png" alt="" /><span className="hs-mono">COMING INTO ORBIT</span></div>
 
-      <section className="culture-interruption">
-        <div className="culture-card one">
-          <span>01</span>
-          <strong>FLAGSHIP NIGHTS</strong>
-          <p>The big ones.</p>
-        </div>
+            <p>Our first chapter starts September 2027. The lineup, the locations and the details are staying under wraps for now.</p>
 
-        <div className="culture-card two">
-          <span>02</span>
-          <strong>POP-UPS</strong>
-          <p>Small rooms. Strange places. Short notice.</p>
-        </div>
+            <p>Keep your eyes open. Announcements will land when they're ready.</p>
 
-        <div className="culture-card three">
-          <span>03</span>
-          <strong>SOCIALS</strong>
-          <p>Beach. Terrace. Daytime. Whatever makes sense.</p>
-        </div>
+            <a className="hs-underline-link" href="#contact">BE PART OF WHAT'S NEXT ↗</a>
 
-        <div className="culture-card four">
-          <span>04</span>
-          <strong>COLLABS</strong>
-          <p>With people we actually like.</p>
-        </div>
-      </section>
-
-      <section className="residents-rogue" id="residents">
-        <div className="resident-heading">
-          <div className="section-marker">04 / RESIDENTS</div>
-          <h2>
-            JIG
-            <br />
-            HAXHAXHAX
-            <br />
-            EREN^2
-          </h2>
-        </div>
-
-        <div className="resident-grid">
-          <div className="resident-box offset-one">
-            <span>RESIDENT 001</span>
-            <div className="resident-placeholder">?</div>
           </div>
 
-          <div className="resident-box offset-two">
-            <span>RESIDENT 002</span>
-            <div className="resident-placeholder">?</div>
-          </div>
-
-          <div className="resident-box offset-three">
-            <span>GUEST SELECTOR</span>
-            <div className="resident-placeholder">?</div>
-          </div>
         </div>
 
-        <p className="resident-caption">
-          EXETER DJS / SELECTORS / FRIENDS OF THE SOCIETY
-        </p>
+        <div className="hs-launch-strip hs-mono"><span>NO TICKETS ON SALE YET</span><span>NO VENUES ANNOUNCED YET</span><span>STAY CLOSE</span></div>
+
       </section>
 
-      <section className="committee-rogue" id="committee">
-        <div className="committee-title">
-          <div className="section-marker">05 / COMMITTEE</div>
-          <h2>
-            YES.
-            <br />
-            THERE'S A
-            <br />
-            COMMITTEE.
-          </h2>
+
+
+      <section className="hs-contact hs-section" id="contact">
+
+        <div className="hs-section-label hs-mono">[ 05 / GET IN TOUCH ]</div>
+
+        <div className="hs-contact-grid">
+
+          <div><p className="hs-eyebrow hs-mono">DJS. VENUES. CREATIVES. BRANDS. GOOD IDEAS.</p><h2>MAKE<br /><span>NOISE.</span></h2></div>
+
+          <div className="hs-contact-side"><p>Want to build something with us? We're always interested in the right people, the right spaces and ideas worth making happen.</p><a className="hs-contact-button" href="mailto:housesocietyexeter@gmail.com?subject=House%20Society%20Enquiry">START A CONVERSATION <span>↗</span></a><small className="hs-mono">FOR COLLABORATIONS / BOOKINGS / ENQUIRIES</small></div>
+
         </div>
 
-        <div className="committee-copy">
-          <p>
-            Because a society needs people behind it.
-          </p>
+        <div className="hs-contact-bottom hs-mono">GOOD MUSIC. GOOD PEOPLE. NO ORDINARY NIGHTS.</div>
 
-          <p>
-            Events. Socials. Music. Marketing. Content. Partnerships.
-            Membership.
-          </p>
-
-          <p>
-            The founders run the company. The committee helps run the culture.
-          </p>
-
-          <div className="committee-roles">
-            <span>EVENTS</span>
-            <span>SOCIALS</span>
-            <span>MUSIC</span>
-            <span>CONTENT</span>
-            <span>MARKETING</span>
-            <span>PARTNERSHIPS</span>
-          </div>
-        </div>
-
-        <div className="committee-side">
-          RUN LIKE
-          <br />
-          A SOCIETY.
-          <br />
-          BUILT LIKE
-          <br />
-          A BRAND.
-        </div>
       </section>
 
-      <section className="contact-rogue" id="contact">
-        <div className="contact-orbit">
-          <img src="/house-society-globe.png" alt="House Society globe" />
-        </div>
 
-        <div className="contact-main">
-          <div className="section-marker">06 / CONTACT</div>
 
-          <h2>
-            GET
-            <br />
-            INVOLVED.
-          </h2>
+      <footer className="hs-footer hs-mono">
 
-          <p>
-            DJs / VENUES / PHOTOGRAPHERS / SOCIETIES / BRANDS / PEOPLE WITH
-            GOOD IDEAS
-          </p>
+        <div className="hs-footer-brand">HOUSE SOCIETY <span>®</span></div>
 
-          <a href="mailto:hello@housesociety.example" className="contact-email">
-            HELLO@HOUSESOCIETY.EXAMPLE ↗
-          </a>
-        </div>
+        <p>INDEPENDENT EVENTS / EXETER, UK<br />LAUNCHING SEPTEMBER 2027<br />© House Society Exeter © </p>
 
-        <div className="contact-tag">
-          GOOD MUSIC
-          <br />
-          GOOD PEOPLE
-          <br />
-          BETTER NIGHTS
-        </div>
-      </section>
+        <p>HOUSE SOCIETY IS INDEPENDENT AND IS NOT AFFILIATED WITH THE UNIVERSITY OF EXETER OR EXETER STUDENTS' GUILD.</p>
 
-      <footer className="rogue-footer">
-        <div>
-          <span>HOUSE SOCIETY</span>
-          <span>EXETER / 2026</span>
-        </div>
+        <a href="#top">BACK TO TOP ↑</a>
 
-        <div>
-          <span>INDEPENDENT STUDENT EVENTS COMPANY</span>
-          <span>
-            NOT AFFILIATED WITH THE UNIVERSITY OF EXETER OR EXETER STUDENTS'
-            GUILD
-          </span>
-        </div>
-
-        <a href="#top">↑ TOP</a>
       </footer>
+
     </main>
+
   );
-  }
+
+}
