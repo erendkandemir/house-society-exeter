@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "House Society — Exeter",
+  title: "House Society — You're going to love this one Exeter...",
   description:
-    "Exeter's independent house music society. Events, pop-ups, DJs and community.",
+    "HAUS HAUS HAUS HAUS HAUS HAUS HAUS... Want some proper music Exeter... September 2027....",
 };
 
 export default function RootLayout({
