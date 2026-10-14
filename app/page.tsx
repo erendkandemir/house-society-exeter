@@ -163,7 +163,7 @@ export default function Home() {
 
           {Array.from({ length: 4 }, (_, i) => (
 
-            <span key={i}>BEST TUNES IN EXETER... <b>✳</b> PROPER DJ'S... <b>✳</b> </span>
+            <span key={i}> Its leng... <b>✳</b> It's certi... <b>✳</b> </span>
 
           ))}
 
