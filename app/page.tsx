@@ -123,7 +123,7 @@ export default function Home() {
             <a key={item.href} href={item.href}>{item.label}</a>
           ))}
         </nav>
-        <a className="hs-nav-cta" href="#launch">SEP 2027 <span aria-hidden="true">↗</span></a>
+        <a className="hs-nav-cta" href="#launch">COMING SOON <span aria-hidden="true">↗</span></a>
       </header>
       <section className="hs-hero" aria-labelledby="hero-title">
         <div className="hs-hero-top hs-meta">
@@ -139,7 +139,7 @@ export default function Home() {
           </h1>
           <div className="hs-hero-bottom-line">
             <p>OHHH EXETER.<br /><em>IT'S BEEN A LONG TIME COMING.</em></p>
-            <div className="hs-hero-stamp" aria-label="Launching September 2027"><span>EXETER</span><strong>09 / 27</strong><span>THE BEGINNING</span></div>
+            <div className="hs-hero-stamp" aria-label="Launching Soon"><span>EXETER</span><strong>COMING SOON</strong><span>THE BEGINNING</span></div>
           </div>
         </div>
         <div className="hs-hero-footer hs-meta"><span>HOUSE MUSIC / PEOPLE / AFTER HOURS</span><a href="#about">SCROLL TO ENTER ↓</a></div>
@@ -235,12 +235,12 @@ export default function Home() {
         <div className="hs-launch-layout">
           <div className="hs-launch-left">
             <p className="hs-meta hs-launch-kicker"><span className="hs-live-dot" /> TRANSMISSION PENDING</p>
-            <h2>SEPT.<br /><span>2027.</span></h2>
+            <h2>COMING.<br /><span>SOON.</span></h2>
             <p className="hs-launch-headline">EXETER, WE'RE JUST GETTING STARTED.</p>
           </div>
           <div className="hs-launch-right">
             <div className="hs-launch-disc"><Globe /><span className="hs-meta">COMING INTO ORBIT</span></div>
-            <p>Our first chapter starts September 2027. The lineup, the locations and the details are staying under wraps for now.</p>
+            <p>Our first chapter starts VERY soon. The lineup, the locations and the details are staying under wraps for now.</p>
             <p>Keep your eyes open. Announcements will land when they're ready.</p>
             <a className="hs-underline-link" href="#contact">BE PART OF WHAT'S NEXT ↗</a>
           </div>
@@ -257,7 +257,7 @@ export default function Home() {
       </section>
       <footer className="hs-footer hs-meta">
         <div className="hs-footer-brand"><span className="hs-footer-wordmark"><span className="hs-sr-only">HOUSE SOCIETY</span><TitleArt asset="house-society" /></span><span className="hs-footer-mark">®</span></div>
-        <p>INDEPENDENT EVENTS / EXETER, UK<br />LAUNCHING SEPTEMBER 2027<br />© House Society Exeter © </p>
+        <p>INDEPENDENT EVENTS / EXETER, UK<br />LAUNCHING SOON<br />© House Society Exeter © </p>
         <p>HOUSE SOCIETY IS INDEPENDENT AND IS NOT AFFILIATED WITH THE UNIVERSITY OF EXETER OR EXETER STUDENTS' GUILD.</p>
         <a href="#top">BACK TO TOP ↑</a>
       </footer>
